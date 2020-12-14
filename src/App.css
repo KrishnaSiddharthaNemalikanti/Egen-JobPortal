@@ -1,0 +1,12 @@
+.App {
+  background-color: #F5F6F8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App-JobContent {
+  background-color: #F5F6F8;
+  display: flex;
+  flex-direction: row;
+}

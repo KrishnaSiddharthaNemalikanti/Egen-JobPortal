@@ -1,0 +1,42 @@
+.JobTile {
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 20px;
+}
+
+.JobTile > p {
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.JobTile-logo{
+    height:40px;
+    width:40px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.JobTile-type{
+    font-size: 10px;
+    color: rgba(0,0,0,.6);
+}
+
+.JobTile-company{
+    font-size: 10px;
+    color: rgba(0,0,0,.6);
+ }
+
+.JobTile-title{
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+
+.JobTile-location{
+    font-size: 10px;
+    color: #0a66c2;
+}

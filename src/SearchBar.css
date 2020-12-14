@@ -1,0 +1,20 @@
+.SearchBar {
+    display: flex;
+    padding: 15px;
+    flex-direction: row;
+}
+
+.SearchBar > input {
+    height:40px;
+    border-color: rgba(0,0,0,.2);
+}
+
+.SearchBar-searchParam{
+    min-width: 350px;
+    margin-right: 15px;
+}
+
+.SearchBar-location{
+    min-width: 200px;
+    margin-right: 15px;
+}
