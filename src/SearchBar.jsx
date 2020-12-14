@@ -1,11 +1,24 @@
 import React from "react"
 import {isEmpty} from "lodash"
 import './SearchBar.css'
+import {Checkbox} from "semantic-ui-react";
 
-export const SearchBar = ({onChangeUrl}) => {
+export const SearchBar = ({onChangeUrl, onSearch}) => {
     const [searchParam , setSearchParam] = React.useState('')
     const [location , setLocation] = React.useState('')
     const [fullTimeBoolean , setFullTimeBoolean] = React.useState(false)
+
+    const onClickFulltime = ()=>{
+        if(fullTimeBoolean)
+        {
+            setFullTimeBoolean(false)
+        }
+        else
+        {
+            setFullTimeBoolean(true)
+        }
+        onChangeUrl(formUrl())
+    }
 
     const onValueChange = (textElement, setFn) => {
         setFn(textElement.target.value)
@@ -35,7 +48,9 @@ export const SearchBar = ({onChangeUrl}) => {
     return(
         <div className="SearchBar">
             <input className="SearchBar-searchParam" placeholder="Filter by title, company" value={searchParam} type='text' onChange={(textElement)=> onValueChange(textElement,setSearchParam)}/>
-            <input className="SearchBar-location" placeholder="Filter by location" value={location} type='text' onChange={(textElement)=> onValueChange(textElement,setLocation)}/>
+            <input className="SearchBar-location" placeholder="Filter by location, default current location" value={location} type='text' onChange={(textElement)=> onValueChange(textElement,setLocation)}/>
+            <Checkbox className= "Search-fulltime" label="Full time" onClick={onClickFulltime} />
+            <button className="SearchBar-button" onClick={onSearch} children="Search"/>
         </div>
     )
 };
