@@ -10,11 +10,22 @@
 }
 
 .SearchBar-searchParam{
-    min-width: 350px;
+    min-width: 400px;
     margin-right: 15px;
 }
 
 .SearchBar-location{
-    min-width: 200px;
+    min-width: 250px;
+    margin-right: 15px;
+}
+
+.SearchBar-button{
+    background-color: #5865E0;
+    color: white;
+    width: 120px;
+}
+
+.Search-fulltime{
+   padding: 10px;
     margin-right: 15px;
 }
