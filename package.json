@@ -36,6 +36,9 @@
     ]
   },
   "devDependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "semantic-ui-react": "^2.0.1"
   }
 }
