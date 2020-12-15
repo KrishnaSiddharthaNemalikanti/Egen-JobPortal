@@ -1,20 +1,30 @@
 .JobPage {
     display: flex;
-    background-color: #F5F6F8;
     height:100%;
     flex-direction: column;
     align-items: center;
+    background-color: #F5F6F8;
+    color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    .JobPage.dark  { background-color:  #131822; color: white; }
+}
+
+@media (prefers-color-scheme: dark) {
+    .tile.dark  { background-color: #19212D; color: white; }
 }
 
 .JobPage-tile1{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    background-color: white;
     height: 100px;
     width: 400px;
     padding:15px;
     justify-content: space-evenly;
+    background-color: #FFFFFF;
+    color: black;
 }
 
 .JobPage-logo{
@@ -32,22 +42,22 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    background-color: white;
     height: 100vh;
     width: 400px;
-    padding:15px;
+    padding: 15px;
     font-size: 12px;
     overflow: scroll;
+    background-color: #FFFFFF;
+    color: black;
 }
 
 .JobPage-type{
     font-size: 10px;
-    color: rgba(0,0,0,.6);
+    color: #A9A9A9;
 }
 
 .JobPage-title{
     font-size: 16px;
-    color: black;
     font-weight: bold;
 }
 .JobPage-tile3{

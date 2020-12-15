@@ -9,6 +9,14 @@
     background-color: white;
 }
 
+@media (prefers-color-scheme: dark) {
+    .JobTile.dark  { background-color: #19212D; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+    .JobTile.light  { background-color: #FFFFFF; color: black; }
+}
+
 .JobTile > p {
     padding-bottom: 10px;
     margin: 0px;
@@ -23,17 +31,16 @@
 
 .JobTile-type{
     font-size: 10px;
-    color: rgba(0,0,0,.6);
+    color: 	#A9A9A9;
 }
 
 .JobTile-company{
     font-size: 10px;
-    color: rgba(0,0,0,.6);
+    color: 	#A9A9A9;
  }
 
 .JobTile-title{
     font-size: 14px;
-    color: black;
     font-weight: bold;
 }
 

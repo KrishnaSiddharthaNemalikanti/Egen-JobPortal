@@ -4,9 +4,19 @@
     flex-direction: row;
 }
 
+@media (prefers-color-scheme: dark) {
+    .SearchBar.dark  { background-color: #19212D; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+    .SearchBar.light  { background-color: #FFFFFF; color: black; }
+}
+
 .SearchBar > input {
     height:40px;
     border-color: rgba(0,0,0,.2);
+    background-color: inherit;
+    color: inherit;
 }
 
 .SearchBar-searchParam{
@@ -28,4 +38,5 @@
 .Search-fulltime{
    padding: 10px;
     margin-right: 15px;
+    color: inherit;
 }

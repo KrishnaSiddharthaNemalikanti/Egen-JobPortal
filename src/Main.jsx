@@ -3,21 +3,18 @@ import React from "react"
 import './Main.css'
 import {SearchBar} from "./SearchBar";
 import {JobTile} from "./JobTile";
+import {themeContext} from "./App";
 
 export const Main = () => {
     const [queryString, setQueryString] = React.useState('');
     const [position, setPosition] = React.useState(null);
     const [searchResults, setSearchResults] = React.useState(null);
 
+   const theme =  React.useContext(themeContext)
 
     React.useEffect(() => navigator.geolocation.getCurrentPosition(function(pos) {
         setPosition(pos)
     }),[]);
-
-   // const theme =  React.useMemo(() =>{
-   //      localStorage.getItem("theme")
-   //     },[localStorage]
-   // )
 
     const onSearch = React.useCallback(() => {
         let url = `https://jobs.github.com/positions.json?`;
@@ -41,7 +38,7 @@ export const Main = () => {
     },[queryString, position]);
 
     return (
-        <div className={`Main light`}>
+        <div className={`Main ${theme}`}>
             <SearchBar onChangeUrl={setQueryString} onSearch={onSearch}/>
             <div className={`Main-JobContent`}>
                 {

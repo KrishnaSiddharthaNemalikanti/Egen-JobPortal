@@ -6,10 +6,11 @@ import {Switch, Route}  from "react-router"
 import {JobPage} from "./JobPage";
 import {Checkbox} from "semantic-ui-react";
 
-function App(props) {
+export const themeContext = React.createContext('light')
+
+export const  App = (props) => {
     const [darkTheme,setDarkTheme] = React.useState(false);
     const onClickTheme = ()=>{
-        localStorage.setItem("darkTheme", !darkTheme?"dark":"light")
         if(darkTheme)
         {
             setDarkTheme(false)
@@ -25,6 +26,7 @@ function App(props) {
               <p> devJobs </p>
               <Checkbox className= 'App-darkTheme-checkbox' label='dark theme' onClick={onClickTheme} />
           </div>
+          <themeContext.Provider value = {darkTheme?"dark":"light" }>
               <Router>
                   <Switch>
                       <Route path="/" component={Main} exact />
@@ -34,6 +36,7 @@ function App(props) {
                       />
                   </Switch>
               </Router>
+          </themeContext.Provider>
       </div>
   )
 }

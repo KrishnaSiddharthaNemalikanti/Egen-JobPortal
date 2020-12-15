@@ -11,3 +11,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+@media (prefers-color-scheme: dark) {
+    .Main.dark  { background-color:  #131822; color: white; }
+}
+
+@media (prefers-color-scheme: light) {
+    .Main.light  { background-color:  #F5F6F8; color: black; }
+}
