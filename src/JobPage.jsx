@@ -30,7 +30,7 @@ export const JobPage = () => {
             .then(res => {
                 setJobResult(res)
             })
-    },[])
+    },[id])
 
     return <div className={`JobPage ${theme}`}>
         <div className={`JobPage-tile1 tile ${theme}`}>
