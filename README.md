@@ -1,4 +1,4 @@
-#Requirements for Running the Application
+# Requirements for Running the Application
 * Install cors plugin and enable it in your browser
 Note: Initially the location of the Application is set to current location of the user.
 
