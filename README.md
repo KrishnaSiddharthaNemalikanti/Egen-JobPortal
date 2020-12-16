@@ -4,7 +4,9 @@
 
 * link for Installation of the cors plugin : https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
   
-Note: Initially the location of the Application is set to current location of the user.
+Note: * Initially the location of the Application is set to current location of the user.
+      * For Better search results, please select the Newyork for your Location
+
 
       
       
