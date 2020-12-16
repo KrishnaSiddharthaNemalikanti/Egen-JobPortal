@@ -8,7 +8,7 @@ Note:
 
 * Initially the location of the Application is set to current location of the user.
 
-* For Better search results, please select the Newyork for your Location.
+* For Better search results, please select Newyork as your Location.
 
 
       
