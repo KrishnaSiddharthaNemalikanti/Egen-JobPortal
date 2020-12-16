@@ -2,7 +2,7 @@
 
 * Install cors plugin and enable it in your browser.
 
-* link for Installation:https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+* link for Installation of the cors plugin :https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
   
 Note: *Initially the location of the Application is set to current location of the user.
       *
