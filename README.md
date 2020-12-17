@@ -8,7 +8,7 @@ Note:
 
 * Initially the location of the Application is set to current location of the user.
 
-* For Better search results, please select Newyork as your Location.
+* For Better search results, please select Berlin as your Location.
 
 
       
