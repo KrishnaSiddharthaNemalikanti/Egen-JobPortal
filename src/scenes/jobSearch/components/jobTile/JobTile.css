@@ -1,0 +1,56 @@
+.JobTile {
+    width: 27%;
+    min-width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 20px;
+    background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    .JobTile.dark {
+        background-color: #19212D;
+        color: white;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .JobTile.light {
+        background-color: #FFFFFF;
+        color: black;
+    }
+}
+
+.JobTile > p {
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.JobTile-logo {
+    height: 40px;
+    width: 40px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.JobTile-type {
+    font-size: 10px;
+    color: #A9A9A9;
+}
+
+.JobTile-company {
+    font-size: 10px;
+    color: #A9A9A9;
+}
+
+.JobTile-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.JobTile-location {
+    font-size: 10px;
+    color: #0a66c2;
+}
