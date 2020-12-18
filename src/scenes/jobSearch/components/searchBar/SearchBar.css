@@ -1,7 +1,10 @@
 .SearchBar {
     display: flex;
-    padding: 15px;
+    padding: 10px;
     flex-direction: row;
+    background-color: #FFFFFF;
+    border-radius: 1em;
+    text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,30 +22,31 @@
 }
 
 .SearchBar > input {
-    height: 40px;
     border-color: rgba(0, 0, 0, .2);
     background-color: inherit;
     color: inherit;
 }
 
 .SearchBar-searchParam {
-    min-width: 400px;
-    margin-right: 15px;
+    width: 100%;
+    height: 100%;
 }
 
 .SearchBar-location {
-    min-width: 250px;
-    margin-right: 15px;
+    width: 100%;
+    height: 100%;
 }
 
 .SearchBar-button {
     background-color: #5865E0;
     color: white;
-    width: 120px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3em;
+    border-color: #5865E0;
 }
 
 .Search-fulltime {
     padding: 10px;
-    margin-right: 15px;
     color: inherit;
 }

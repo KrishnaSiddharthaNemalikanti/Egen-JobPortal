@@ -3,6 +3,8 @@ import {isEmpty} from "lodash"
 import './SearchBar.css'
 import {Checkbox} from "semantic-ui-react";
 import {themeContext} from "../../JobSearch";
+import { Col, Container, Row } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const SearchBar = ({onChangeUrl, onSearch}) => {
     const [searchParam, setSearchParam] = React.useState('')
@@ -46,12 +48,24 @@ export const SearchBar = ({onChangeUrl, onSearch}) => {
 
     return (
         <div className={`SearchBar ${theme}`}>
-            <input className="SearchBar-searchParam" placeholder="Filter by title, company" value={searchParam}
+            <Container style={{width:"100%"}}>
+                <Row>
+                    <Col md={5} style={{padding:"0px 5px"}}>
+                    <input className="SearchBar-searchParam" placeholder="Filter by title, company" value={searchParam}
                    type='text' onChange={(textElement) => onValueChange(textElement, setSearchParam)}/>
-            <input className="SearchBar-location" placeholder="Filter by location, default current location"
+                    </Col>
+                    <Col md={3} style={{padding:"0px 5px"}}>
+                    <input className="SearchBar-location" placeholder="Filter by location, default current location"
                    value={location} type='text' onChange={(textElement) => onValueChange(textElement, setLocation)}/>
-            <Checkbox className="Search-fulltime" label="Full time" onClick={onClickFulltime}/>
-            <button className="SearchBar-button" onClick={onSearch} children="Search"/>
+                    </Col>
+                    <Col md={2} style={{padding:"0px 5px"}}>
+                    <Checkbox className="Search-fulltime" label="Full time" onClick={onClickFulltime}/>
+                    </Col>
+                    <Col md={2} style={{padding:"0px 5px"}}>
+                    <button className="SearchBar-button" onClick={onSearch} children="Search"/>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 };

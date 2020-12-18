@@ -1,11 +1,12 @@
 .JobSearch-header {
     padding: 20px 0px 0px 70px;
     background-color: #5865E0;
-    height: 80px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     color: white;
     border-radius: 0 0 0 4em;
+    position: relative;
 }
 
 .JobSearch-darkTheme-checkbox {
