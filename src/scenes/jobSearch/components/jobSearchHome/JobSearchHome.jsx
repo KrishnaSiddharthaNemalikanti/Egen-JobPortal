@@ -7,14 +7,14 @@ import {themeContext} from "../../JobSearch";
 
 export const JobSearchHome = () => {
     const [queryString, setQueryString] = React.useState('');
-    const [position, setPosition] = React.useState(null);
+//     const [position, setPosition] = React.useState(null);
     const [searchResults, setSearchResults] = React.useState(null);
 
     const theme = React.useContext(themeContext)
 
-    React.useEffect(() => navigator.geolocation.getCurrentPosition(function (pos) {
-        setPosition(pos)
-    }), []);
+//     React.useEffect(() => navigator.geolocation.getCurrentPosition(function (pos) {
+//         setPosition(pos)
+//     }), []);
 
     React.useEffect(() => {
         let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json`;
