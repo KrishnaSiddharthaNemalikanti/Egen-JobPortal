@@ -1,4 +1,4 @@
-import {isEmpty, isNil} from "lodash";
+import {isEmpty} from "lodash";
 import React from "react"
 import './JobSearchHome.css'
 import {SearchBar} from "../searchBar/SearchBar";
@@ -16,24 +16,35 @@ export const JobSearchHome = () => {
         setPosition(pos)
     }), []);
 
+    React.useEffect(() => {
+        let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json`;
+        fetch(url)
+            .then(res => res.json())
+            .then(res => {
+                setSearchResults(res)
+            })
+    }, []);
+
     const onSearch = React.useCallback(() => {
-        let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?`;
-        if (!isEmpty(queryString) && queryString.includes('location')) {
-            url = `${url}${queryString}`;
+        let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json`;
+        if (!isEmpty(queryString)) {
+            url = `${url}?${queryString}`
+            // } else if (!isNil(position)) {
+            //     url = `${url}lat=${position.coords.latitude}&long=${position.coords.longitude}`
+            // }
             fetch(url)
                 .then(res => res.json())
                 .then(res => {
                     setSearchResults(res)
                 })
-        } else if (!isNil(position)) {
-            url = `${url}lat=${position.coords.latitude}&long=${position.coords.longitude}`
+        } else {
             fetch(url)
                 .then(res => res.json())
                 .then(res => {
                     setSearchResults(res)
                 })
         }
-    }, [queryString, position]);
+    }, [queryString]);
 
     return (
         <div className={`JobSearchHome ${theme}`}>
