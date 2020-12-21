@@ -4,7 +4,10 @@ import {JobSearchHome} from './components/jobSearchHome/JobSearchHome';
 import {BrowserRouter as Router} from "react-router-dom"
 import {Route, Switch} from "react-router"
 import {JobPage} from "./components/jobPage/JobPage";
-import {Checkbox} from "semantic-ui-react";
+import Toggle from "react-toggle"
+import "./toggle.css"
+import sun from "../../images/sun.svg"
+import moon from "../../images/moon.svg"
 
 export const themeContext = React.createContext('light')
 
@@ -13,27 +16,36 @@ export const JobSearch = () => {
     const onClickTheme = () => {
         if (darkTheme) {
             setDarkTheme(false)
+            document.body.classList.remove('dark');
         } else {
             setDarkTheme(true)
+            document.body.classList.add('dark');
         }
     }
     return (
-        <div>
+        <div className='JobSearch-main'>
             <div className='JobSearch-header'>
-                <p> devJobs </p>
-                <Checkbox className='JobSearch-darkTheme-checkbox' label='dark theme' onClick={onClickTheme}/>
+                <p className='JobSearch-title'> devJobs </p>
+                <div className='JobSearch-toggle'>
+                    <img className='sun' src={sun}/>
+                    <Toggle
+                        defaultChecked={false}
+                        className='JobSearch-darkTheme-checkbox'
+                        onChange={onClickTheme}/>
+                    <img className='moon' src={moon}/>
+                </div>
+                <themeContext.Provider value={darkTheme ? "dark" : "light"}>
+                    <Router>
+                        <Switch>
+                            <Route path="/" component={JobSearchHome} exact/>
+                            <Route
+                                path={"/job/:id"}
+                                component={JobPage}
+                            />
+                        </Switch>
+                    </Router>
+                </themeContext.Provider>
             </div>
-            <themeContext.Provider value={darkTheme ? "dark" : "light"}>
-                <Router>
-                    <Switch>
-                        <Route path="/" component={JobSearchHome} exact/>
-                        <Route
-                            path={"/job/:id"}
-                            component={JobPage}
-                        />
-                    </Switch>
-                </Router>
-            </themeContext.Provider>
         </div>
     )
 }

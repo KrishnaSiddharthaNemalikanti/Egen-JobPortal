@@ -1,10 +1,14 @@
 .JobPage {
     display: flex;
-    height: 100%;
+    height: 100vh;
     flex-direction: column;
-    align-items: center;
     background-color: #F5F6F8;
+    background-size: 100%;
     color: black;
+    position: absolute;
+    top: 100px;
+    width: 50%;
+    margin-left: 20%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,9 +30,8 @@
     flex-direction: row;
     margin-bottom: 20px;
     height: 100px;
-    width: 400px;
     padding: 15px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: #FFFFFF;
     color: black;
 }
@@ -49,12 +52,43 @@
     flex-direction: column;
     margin-bottom: 20px;
     height: 100vh;
-    width: 400px;
     padding: 15px;
     font-size: 12px;
     overflow: scroll;
     background-color: #FFFFFF;
     color: black;
+}
+
+.JobPage-title-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a.JobPage-companyUrl {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: inherit;
+
+    text-decoration: none;
+    background-color: #F5F6F8;
+    color: #5865E0;
+    height: 16px;
+    padding: 10px;
+}
+
+a.JobPage-applynow {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: inherit;
+
+    text-decoration: none;
+    background-color: #5865E0;
+    color: #FFFFFF;
+    height: 16px;
+    width: 70px;
+    padding: 10px;
+    margin-top: 15px;
 }
 
 .JobPage-type {
@@ -63,13 +97,13 @@
 }
 
 .JobPage-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
+    padding-right: 240px;
 }
 
 .JobPage-tile3 {
     display: flex;
-    width: 400px;
     padding: 15px;
     flex-direction: column;
     background-color: #5865E0;

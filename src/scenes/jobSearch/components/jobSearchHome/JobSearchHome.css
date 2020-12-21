@@ -5,23 +5,29 @@
     height: 100vh;
     overflow: scroll;
     width: 80%;
-    margin: 0 auto;
+    align-self: center;
     position: absolute;
     top: 100px;
     left: 10%;
-    border-radius: 1em;
 }
 
 .JobSearchHome-JobContent {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 @media (prefers-color-scheme: dark) {
-    .JobSearchHome.dark  { background-color:  #131822; color: white; }
+    .JobSearchHome.dark {
+        background-color: #131822;
+        color: white;
+    }
 }
 
 @media (prefers-color-scheme: light) {
-    .JobSearchHome.light  { background-color:  #F5F6F8; color: black; }
+    .JobSearchHome.light {
+        background-color: #F5F6F8;
+        color: black;
+    }
 }

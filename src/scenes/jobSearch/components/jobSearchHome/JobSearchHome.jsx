@@ -17,7 +17,7 @@ export const JobSearchHome = () => {
     }), []);
 
     const onSearch = React.useCallback(() => {
-        let url = `https://jobs.github.com/positions.json?`;
+        let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?`;
         if (!isEmpty(queryString) && queryString.includes('location')) {
             url = `${url}${queryString}`;
             fetch(url)
@@ -37,7 +37,7 @@ export const JobSearchHome = () => {
 
     return (
         <div className={`JobSearchHome ${theme}`}>
-            <SearchBar onChangeUrl={setQueryString} onSearch={onSearch}/>
+            <SearchBar className="SearchBar" onChangeUrl={setQueryString} onSearch={onSearch}/>
             <div className={`JobSearchHome-JobContent`}>
                 {
                     searchResults?.map(searchResult => <JobTile jobResult={searchResult}/>)

@@ -24,7 +24,7 @@ export const JobPage = () => {
     const theme = React.useContext(themeContext);
 
     React.useEffect(() => {
-        let url = `https://jobs.github.com/positions/${id}.json`;
+        let url = `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`;
         fetch(url)
             .then(res => res.json())
             .then(res => {
@@ -36,13 +36,15 @@ export const JobPage = () => {
         <div className={`JobPage-tile1 tile ${theme}`}>
             <img src={jobResult?.company_logo} className="JobPage-logo" alt="logo"/>
             <p className="JobPage-company">{jobResult?.company}</p>
-            <a href={jobResult?.company_url}>Company Site</a>
+            <a href={jobResult?.company_url} className='JobPage-companyUrl'>Company Site</a>
         </div>
 
         <div className={`JobPage-tile2 tile ${theme}`}>
             <p className="JobPage-type">{`${days_between(jobResult?.created_at)} days ago`} . {jobResult?.type}</p>
-            <p className="JobPage-title">{jobResult?.title}</p>
-            <a href={jobResult?.url}>Apply Now</a>
+            <div className={`JobPage-title-section`}>
+                <p className="JobPage-title">{jobResult?.title}</p>
+                <a href={jobResult?.url} className='JobPage-applynow'>Apply Now</a>
+            </div>
             <div dangerouslySetInnerHTML={{__html: jobResult?.description}}/>
         </div>
 
